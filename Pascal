@@ -1,0 +1,36 @@
+program triangulo;
+uses crt;
+var
+   area,perimetro,base_global,altura_global,l_global_1,l_global_2,l_global_3: real;
+   
+function area_triangulo(base, altura : real) : real;
+BEGIN
+    area_triangulo := (base * altura)/2
+END;
+
+function perimetro_triangulo(l1, l2, l3 : real) : real;
+BEGIN
+    perimetro_triangulo := (l1+l2+l3)
+END;
+
+BEGIN
+   clrscr;
+   write('Digite a base do triangulo: ');
+   read(base_global);
+   write('Digite a altura do triangulo: ');
+   read(altura_global);
+   area := area_triangulo(base_global,altura_global);
+   write('A area do triangulo é ',area:2:2);
+   writeln();
+   write('Agora digite o valor do 1° lado do triangulo: ');
+   read(l_global_1);
+   write('Digite agora o valor do 2° lado do triangulo: ');
+   read(l_global_2);
+   write('E por último digite o valor do 3° lado do triangulo: ');
+   read(l_global_3);
+   perimetro := perimetro_triangulo(l_global_1,l_global_2,l_global_3);
+   write('O perimetro do triangulo é ', perimetro:2:0);
+   writeln();
+   write('Aperte qualquer tecla....');
+   readkey;
+END.
